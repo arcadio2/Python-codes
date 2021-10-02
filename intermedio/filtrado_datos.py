@@ -82,12 +82,13 @@ def run():
     print("___________________________________________________________")
     all_python_names = [woker["name"] for woker in DATA if woker["language"] == "python"]
     langague_python = list(filter(lambda worker:  worker["language"]=="python" , DATA))
+    #print(langague_python)
     all_python_names = list(map(lambda  worker: worker["name"], langague_python))
     print(all_python_names)
     print("_____________________________fin______________________________")
-    all_platzi_workers = [worker["name"] for worker in DATA if worker["organization"]=="Platzi"]
+    all_platzi_workers = [{"name":worker["name"],"age":worker["age"]} for worker in DATA if worker["organization"]=="Platzi"]
     platzi_workers = list(filter(lambda workers:workers["organization"]=="Platzi", DATA))
-    all_platzi_workers = list(map(lambda  workers:workers["name"], platzi_workers))
+    sall_platzi_workers = list(map(lambda  workers:workers["name"], platzi_workers))
     print(all_platzi_workers)
     print("_____________________________fin______________________________")
     adultos = [{"name": worker["name"], "edad":worker["age"]} for worker in DATA if worker["age"]>=18]
