@@ -9,7 +9,7 @@ import random
 import math
 from bokeh.plotting import figure, output_file, show
 import collections
-
+import numpy as np 
 POINTS_COLOURS = ['turquoise', 'lime', 'dodgerblue', 'fuchsia', 'lightcoral', 'navajowhite']
 CLUSTERS_COLOURS = ['teal', 'green', 'blue', 'purple', 'red', 'goldenrod']
 SIZE_VECTOR = 10
@@ -19,10 +19,22 @@ NUM_VECTORS = 100
 NUM_CLUSTERS = 4
 
 def generate_random_vector(numVectors, random_low_number, random_high_number):
-
     random_vectors = []
-    for i in range(numVectors):
-        random_vectors.append([random.uniform(random_low_number, random_high_number), random.uniform(random_low_number, random_high_number)])
+    n = int(numVectors/2)
+    n2= numVectors-n
+    a = np.random.multivariate_normal([10,0], [[3,1], [1,4]], size=[n,])
+    b = np.random.multivariate_normal([0,20], [[3,1], [1,4]], size=[n2,])
+ 
+    for i in range(n): 
+        vector = [a[i][0],a[i][1]]
+        random_vectors.append(vector)
+        vector2 = [b[i][0],b[i][1]]
+        random_vectors.append(vector2)
+    
+ 
+    #random_vectors = []
+    #for i in range(numVectors):
+    #    random_vectors.append([random.uniform(random_low_number, random_high_number), random.uniform(random_low_number, random_high_number)])
 
     return random_vectors
 

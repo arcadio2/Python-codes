@@ -8,7 +8,6 @@ Created on Wed Oct  6 12:46:20 2021
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as  pd 
-import matplotlib.patches as patches
 def generate_random_vectors():
     vectors = []
    # for _ in range(100):
@@ -111,10 +110,6 @@ def cluster(vector):
     return lista_final
    
     
-   
-def matriz_clusters(): 
-    
-    pass
 
 if __name__ == '__main__':
     vectors = generate_random_vectors()
