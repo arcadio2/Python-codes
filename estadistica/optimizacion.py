@@ -15,11 +15,14 @@ def fibonacci_dinamico(n, memo = {}):
     if n == 0 or n==1:
         return 1
     try:
+        #Si existe, toma el que está en memoria
+        print(f'XD={memo[n]}')
         return memo[n]
     except KeyError: 
+        #Si no existe, hace la operacion
         resultado = fibonacci_dinamico(n-1, memo) + fibonacci_dinamico(n-2, memo)
         memo[n]  = resultado 
-        print(memo)
+        #print(memo[n])
         return resultado
 
 if __name__ == '__main__':

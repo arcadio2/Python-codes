@@ -172,7 +172,7 @@ if __name__ == '__main__':
     vectors = generate_random_vectors()
     plot(vectors)
 
-    K = 6 # GRUPOS MAXIMO 6 por los colores
+    K = 4 # GRUPOS MAXIMO 6 por los colores
     kas = k_aleatorios(K)
     index = 0
     for i in kas:
